@@ -2,7 +2,7 @@
 set -o pipefail
 set -e
 
-export THEANO_FLAGS=device=gpu3
+export THEANO_FLAGS=device=gpu
 
 entry=$1
 model=$2
@@ -11,7 +11,7 @@ ref_stem=$4
 
 beamsize=10
 bpe=true
-bleu_script=/home/pluiefox/repos/mosesdecoder/scripts/generic/multi-bleu.perl
+bleu_script=multi-bleu.perl
 
 translate="python $entry translate --model $model --beamsize $beamsize --normalize"
 restore_bpe="sed -r 's/(@@ )|(@@ ?$)//g'"
