@@ -717,8 +717,8 @@ def train(args):
     ext_val_script = option['ext_val_script']
     if not os.path.exists(ext_val_script):
         raise ValueError('File doesn\'t exist: %s' % ext_val_script)
-    elif not os.access(ext_val_script, os.X_OK):
-        raise ValueError('File is not executable: %s' % ext_val_script)
+    #elif not os.access(ext_val_script, os.X_OK):
+    #    raise ValueError('File is not executable: %s' % ext_val_script)
     # check references format
     ref_stem = None
     if option['validation'] and option['references']:
