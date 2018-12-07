@@ -48,7 +48,8 @@ class Progress:
     def _init_task_manager(self):
         manager = Manager(1)
 
-        device = theano.config.device
+        #device = theano.config.device
+        device = [0]
         id = int(device[-1])
         ids = range(4) + range(4)
         ids = ids[id + 1:id + 5]
